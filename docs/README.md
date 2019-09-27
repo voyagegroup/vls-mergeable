@@ -5,6 +5,10 @@
   <p>Mergeable</p>
 </h1>
 
+**このリポジトリは https://github.com/mergeability/mergeable の修正 BSD ライセンス時点のコード https://github.com/mergeability/mergeable/tree/8f702b073ed1a91a6914bbbdeceef440fffe3097 の VOYAGE Lighthouse Studio 用 fork です。**
+
+**オリジナルの mergeability/mergeable は 2019/09/27 現在 AGPL であるため、 AGPL になって以降のコードをこの fork 版リポジトリに混入させることはライセンス上絶対にできません。注意してください。**
+
 <h4 align="center">A bot that enforces consistency and standards on your GitHub projects and repositories.</h4>
 
 <p align="center">
