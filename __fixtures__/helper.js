@@ -98,7 +98,7 @@ module.exports = {
           }
         },
         issues: {
-          getIssueLabels: () => {
+          listLabelsOnIssue: () => {
             return { data: (options.labels) ? options.labels : [] }
           },
           get: () => {
