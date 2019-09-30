@@ -325,7 +325,7 @@ const createMockGhConfig = (json, prConfig, options) => {
         })
       },
       pullRequests: {
-        getFiles: () => {
+        listFiles: () => {
           return { data: options.files && options.files.map(file => ({filename: file, status: 'modified'})) }
         }
       }

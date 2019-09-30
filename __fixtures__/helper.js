@@ -75,25 +75,25 @@ module.exports = {
           }
         },
         pullRequests: {
-          getFiles: () => {
+          listFiles: () => {
             if (_.isString(options.files && options.files[0])) {
               return { data: options.files.map(file => ({filename: file, status: 'modified'})) }
             } else {
               return { data: options.files && options.files }
             }
           },
-          getReviews: () => {
+          listReviews: () => {
             return { data: (options.reviews) ? options.reviews : [] }
           }
         },
         projects: {
-          getRepoProjects: () => {
+          listForRepo: () => {
             return { data: (options.repoProjects) ? options.repoProjects : [] }
           },
-          getProjectColumns: () => {
+          listColumns: () => {
             return { data: (options.projectColumns) ? options.projectColumns : [] }
           },
-          getProjectCards: () => {
+          listCards: () => {
             return { data: (options.projectCards) ? options.projectCards : [] }
           }
         },
@@ -128,7 +128,7 @@ module.exports = {
         content: Buffer.from(configString).toString('base64') }
       })
     }
-    context.github.pullRequests.getFiles = () => {
+    context.github.pullRequests.listFiles = () => {
       return Promise.resolve({
         data: options && options.files ? options.files.map(file => ({ filename: file, status: 'modified' })) : []
       })
