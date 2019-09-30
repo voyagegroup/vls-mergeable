@@ -123,7 +123,7 @@ module.exports = {
   },
 
   mockConfigWithContext: (context, configString, options) => {
-    context.github.repos.getContent = () => {
+    context.github.repos.getContents = () => {
       return Promise.resolve({ data: {
         content: Buffer.from(configString).toString('base64') }
       })
