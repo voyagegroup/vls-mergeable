@@ -43,7 +43,7 @@ module.exports = {
       github: {
         repos: {
           createStatus: () => {},
-          getContent: ({ path }) => {
+          getContents: ({ path }) => {
             return new Promise((resolve, reject) => {
               if (path === '.github/mergeable.yml') {
                 throwNotFound()

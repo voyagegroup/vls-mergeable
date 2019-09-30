@@ -90,7 +90,7 @@ describe('without flex', () => {
       expect(mergeable.title).toBe('title regex')
       expect(mergeable.label).toBe('label regex')
     })
-    expect(context.github.repos.getContent.mock.calls.length).toBe(1)
+    expect(context.github.repos.getContents.mock.calls.length).toBe(1)
   })
 
   test('that instanceWithContext returns the right Configuration (pull_requrests)', async () => {
@@ -108,7 +108,7 @@ describe('without flex', () => {
       expect(mergeable.pull_requests.title).toBe('title issue regex')
       expect(mergeable.pull_requests.label).toBe('label issue regex')
     })
-    expect(context.github.repos.getContent.mock.calls.length).toBe(1)
+    expect(context.github.repos.getContents.mock.calls.length).toBe(1)
   })
 
   test('that instanceWithContext returns the right Configuration (issues)', async () => {
@@ -126,7 +126,7 @@ describe('without flex', () => {
       expect(mergeable.issues.title).toBe('title issue regex')
       expect(mergeable.issues.label).toBe('label issue regex')
     })
-    expect(context.github.repos.getContent.mock.calls.length).toBe(1)
+    expect(context.github.repos.getContents.mock.calls.length).toBe(1)
   })
 
   test('that instanceWithContext loads the configuration for stale correctly when specified for pull_requests and issues separately', async () => {
@@ -193,7 +193,7 @@ describe('without flex', () => {
       },
       github: {
         repos: {
-          getContent: jest.fn().mockReturnValue(
+          getContents: jest.fn().mockReturnValue(
             Promise.reject(
               new HttpError(
                 '{"message":"Not Found","documentation_url":"https://developer.github.com/v3/repos/contents/#get-contents"}',
@@ -214,7 +214,7 @@ describe('without flex', () => {
       /* global fail */
       fail('Should handle error: ' + err)
     })
-    expect(context.github.repos.getContent.mock.calls.length).toBe(1)
+    expect(context.github.repos.getContents.mock.calls.length).toBe(1)
   })
 })
 
@@ -232,7 +232,7 @@ const createMockGhConfig = (json) => {
     },
     github: {
       repos: {
-        getContent: jest.fn().mockReturnValue(
+        getContents: jest.fn().mockReturnValue(
           Promise.resolve({
             data: { content: Buffer.from(json).toString('base64') }
           })
